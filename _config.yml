@@ -18,19 +18,30 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Salif's blog
+title: Salif's Blog
 email: mail@salif.eu
 description: >- # this means to ignore newlines until "baseurl:"
   Salif's Blog
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blog.salif.eu" # the base hostname & protocol for your site, e.g. http://example.com
+search: true
 
-theme: minimal-mistakes-jekyll
-minimal_mistakes_skin: "neon" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
+remote_theme: mmistakes/minimal-mistakes
+minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
+timezone: Europe/Sofia
+markdown: kramdown
 github_username: salif
+
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-include-cache
+
 author:
   name   : "Salif Mehmed"
-  #avatar : "https://www.gravatar.com/avatar/ae47f6842c9aef792610fcb0b6718d19?s=256"
+  avatar : "https://www.gravatar.com/avatar/ae47f6842c9aef792610fcb0b6718d19?s=256"
   bio    : "Software Developer"
   links:
     - label: "Website"
