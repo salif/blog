@@ -18,31 +18,59 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Salif's Blog
-email: mail@salif.eu
-description: >- # this means to ignore newlines until "baseurl:"
-  Salif's Blog
+title: "Salif's Blog"
+title_separator: "-"
+name: "Salif Mehmed"
+email: "mail@salif.eu"
+description: "Salif's Blog"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://blog.salif.eu" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://blog.salif.eu"
+repository: "salif/blog"
+github_username: "salif"
 search: true
 
+markdown: "kramdown"
 remote_theme: mmistakes/minimal-mistakes
 minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
-timezone: Europe/Sofia
-markdown: kramdown
-github_username: salif
+permalink: /:categories/:title/
+words_per_minute: 180
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: "Europe/Sofia"
 
+include:
+  - _pages
+  - _includes
 
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-seo-tag
   - jekyll-feed
+  - jemoji
   - jekyll-include-cache
 
+social:
+  type: "Person"
+  name: "Salif Mehmed"
+  links:
+    - "https://www.linkedin.com/in/salifm"
+
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "blog-salif-eu"
+
+analytics:
+  provider: "custom"
+
 author:
-  name   : "Salif Mehmed"
-  avatar : "https://www.gravatar.com/avatar/ae47f6842c9aef792610fcb0b6718d19?s=256"
-  bio    : "Software Developer"
+  name: "Salif Mehmed"
+  avatar : "/assets/me.jpg"
+  bio: "Software Developer"
+  location: "Bulgaria, Europe"
+  email: "mail@salif.eu"
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -50,6 +78,36 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/salif"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/salifm"
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: false
+      read_time: true
+      comments: true
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
